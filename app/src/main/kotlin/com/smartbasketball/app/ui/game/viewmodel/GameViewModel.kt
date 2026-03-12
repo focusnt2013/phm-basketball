@@ -15,6 +15,7 @@ import com.smartbasketball.app.util.AppLogger
 import com.smartbasketball.app.util.GestureType
 import com.google.mlkit.vision.face.Face
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -33,6 +34,8 @@ class GameViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
+    
+    private var gameJob: Job? = null  // 游戏协程job，用于取消
 
     init {
         initializeApp()
@@ -148,10 +151,14 @@ class GameViewModel @Inject constructor(
     }
     
     fun startGame() {
+        AppLogger.d("========== startGame 被调用 ==========")
+        // 取消可能正在运行的旧协程
+        gameJob?.cancel()
+        
         _uiState.update {
             it.copy(
                 gameState = GameState.GAME_PLAYING,
-                countdownNumber = 3,
+                countdownNumber = 4,  // 设为4，等待1秒后显示3，确保看到完整3-2-1
                 madeBalls = 0,
                 missedBalls = 0
             )
@@ -160,13 +167,12 @@ class GameViewModel @Inject constructor(
     }
     
     private fun startCountdown() {
-        viewModelScope.launch {
-            for (i in 3 downTo 1) {
+        gameJob = viewModelScope.launch {
+            AppLogger.d("startCountdown: 开始倒计时")
+            for (i in 4 downTo 1) {
                 delay(1000)
-                val currentCountdown = _uiState.value.countdownNumber
-                if (currentCountdown != null && currentCountdown > 0) {
-                    _uiState.update { it.copy(countdownNumber = currentCountdown - 1) }
-                }
+                _uiState.update { it.copy(countdownNumber = i - 1) }
+                AppLogger.d("startCountdown: countdown=${i - 1}")
             }
             startGameTimer()
         }
@@ -175,19 +181,33 @@ class GameViewModel @Inject constructor(
     private fun startGameTimer() {
         _uiState.update { it.copy(remainingTime = 60) }
         
-        viewModelScope.launch {
-            while (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
-                delay(1000)
-                val currentTime = _uiState.value.remainingTime
-                if (currentTime != null && currentTime > 0) {
-                    _uiState.update { it.copy(remainingTime = currentTime - 1) }
+        gameJob = viewModelScope.launch {
+            AppLogger.d("startGameTimer: 开始游戏计时")
+            
+            // 启动单独协程处理投篮模拟（随机间隔800-1200毫秒）
+            launch {
+                while (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
+                    val delayMs = Random.nextLong(800, 1201)  // 800-1200毫秒随机
+                    delay(delayMs)
                     
-                    if (currentTime <= 55 && currentTime % 3 == 0) {
+                    if (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
                         simulateShot()
                     }
                 }
             }
-            endGame()
+            
+            // 主循环：每秒递减剩余时间
+            while (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
+                delay(1000)
+                val newTime = _uiState.value.remainingTime?.minus(1)
+                if (newTime != null && newTime >= 0) {
+                    _uiState.update { it.copy(remainingTime = newTime) }
+                    
+                    if (newTime <= 0) {
+                        endGame()
+                    }
+                }
+            }
         }
     }
     
@@ -242,6 +262,10 @@ class GameViewModel @Inject constructor(
     }
     
     private fun resetToStandby() {
+        // 取消游戏协程
+        gameJob?.cancel()
+        gameJob = null
+        
         _uiState.update {
             it.copy(
                 gameState = GameState.STANDBY,
@@ -365,33 +389,50 @@ class GameViewModel @Inject constructor(
     fun login(schoolId: String, password: String, onResult: (Boolean, String) -> Unit) {
         viewModelScope.launch {
             _uiState.update { it.copy(startupMessage = "正在登录...") }
-            try {
-                // 简化处理：直接保存学校ID作为登录成功
-                // 暂时使用本地存储，后续完善后端API调用
-                val schoolJson = org.json.JSONObject().apply {
-                    put("_id", schoolId)
-                    put("title", "学校-$schoolId")
+            
+            // 调用服务器API获取真实学校数据
+            val result = basketballApi.register(schoolId, password)
+            result.fold(
+                onSuccess = { response ->
+                    // 从school对象中获取数据
+                    val schoolData = response.optJSONObject("school")
+                    if (schoolData != null) {
+                        // 保存服务器返回的school对象
+                        schoolStorage.saveSchool(schoolData)
+                        
+                        // 获取学校名称：优先用title，其次用name
+                        val schoolTitle = schoolData.optString("title").ifEmpty { 
+                            schoolData.optString("name").ifEmpty { "学校-$schoolId" } 
+                        }
+                        _uiState.update {
+                            it.copy(
+                                schoolTitle = schoolTitle,
+                                gameState = GameState.STANDBY,
+                                startupMessage = "登录成功"
+                            )
+                        }
+                        onResult(true, "登录成功")
+                    } else {
+                        _uiState.update {
+                            it.copy(
+                                loginFailed = true,
+                                startupMessage = "登录失败：无法获取学校数据"
+                            )
+                        }
+                        onResult(false, "登录失败：无法获取学校数据")
+                    }
+                },
+                onFailure = { e ->
+                    AppLogger.e("登录异常: ${e.message}")
+                    _uiState.update {
+                        it.copy(
+                            loginFailed = true,
+                            startupMessage = "登录异常: ${e.message}"
+                        )
+                    }
+                    onResult(false, "登录异常: ${e.message}")
                 }
-                schoolStorage.saveSchool(schoolJson)
-                
-                _uiState.update {
-                    it.copy(
-                        schoolTitle = "学校-$schoolId",
-                        gameState = GameState.STANDBY,
-                        startupMessage = "登录成功"
-                    )
-                }
-                onResult(true, "登录成功")
-            } catch (e: Exception) {
-                AppLogger.e("登录异常: ${e.message}")
-                _uiState.update {
-                    it.copy(
-                        loginFailed = true,
-                        startupMessage = "登录异常"
-                    )
-                }
-                onResult(false, "登录异常: ${e.message}")
-            }
+            )
         }
     }
     

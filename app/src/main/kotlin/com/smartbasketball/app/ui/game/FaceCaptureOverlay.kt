@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -88,6 +89,20 @@ fun FaceCaptureOverlay(
                 center = center,
                 style = Stroke(width = 12f)
             )
+
+            // 识别成功时在圆圈中央显示提示
+            if (isSuccess) {
+                drawContext.canvas.nativeCanvas.apply {
+                    val paint = android.graphics.Paint().apply {
+                        color = android.graphics.Color.WHITE
+                        textSize = 24.dp.toPx()
+                        textAlign = android.graphics.Paint.Align.CENTER
+                        alpha = 220
+                        isFakeBoldText = true
+                    }
+                    drawText("请点头确认开始游戏", center.x, center.y, paint)
+                }
+            }
             
             val innerRadius = radius - 15f
             
@@ -147,15 +162,6 @@ fun FaceCaptureOverlay(
                         .padding(top = 75.dp)
                 )
             }
-            // 提示点头确认
-            Text(
-                text = "请点头确认开始游戏",
-                fontSize = 16.sp,
-                color = Color.White.copy(alpha = 0.8f),
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .padding(top = 110.dp)
-            )
         }
     }
 }

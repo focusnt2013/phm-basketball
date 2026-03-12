@@ -127,6 +127,7 @@ private fun startCamera(
                     it.setSurfaceProvider(previewView.surfaceProvider)
                 }
 
+            val isFrontCamera = hasFrontCamera
             val imageAnalysis = ImageAnalysis.Builder()
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .setOutputImageFormat(ImageAnalysis.OUTPUT_IMAGE_FORMAT_YUV_420_888)
@@ -141,7 +142,7 @@ private fun startCamera(
                                 onCameraReady()
                             }
                         }
-                        processImage(imageProxy, faceDetector, onFaceDetected, onFaceLost, onFirstFrame)
+                        processImage(imageProxy, faceDetector, onFaceDetected, onFaceLost, onFirstFrame, isFrontCamera)
                     }
                 }
 
@@ -175,7 +176,8 @@ private fun startCamera(
     faceDetector: com.google.mlkit.vision.face.FaceDetector,
     onFaceDetected: (Bitmap, Face, Int, Int) -> Unit,
     onFaceLost: () -> Unit,
-    onFirstFrame: () -> Unit
+    onFirstFrame: () -> Unit,
+    isFrontCamera: Boolean = true
 ) {
     val image = imageProxy.image ?: run {
         imageProxy.close()
@@ -184,7 +186,12 @@ private fun startCamera(
 
     try {
         val bitmap = imageProxy.toBitmap()
-        val rotatedBitmap = rotateBitmap(bitmap, imageProxy.imageInfo.rotationDegrees.toFloat())
+        var rotatedBitmap = rotateBitmap(bitmap, imageProxy.imageInfo.rotationDegrees.toFloat())
+        
+        // 前置摄像头需要水平翻转（镜像），因为预览是镜像显示的
+        if (isFrontCamera) {
+            rotatedBitmap = flipBitmapHorizontally(rotatedBitmap)
+        }
         
         onFirstFrame()
         
@@ -221,6 +228,13 @@ private fun rotateBitmap(bitmap: Bitmap, degrees: Float): Bitmap {
     
     val matrix = Matrix().apply {
         postRotate(degrees)
+    }
+    return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+}
+
+private fun flipBitmapHorizontally(bitmap: Bitmap): Bitmap {
+    val matrix = Matrix().apply {
+        preScale(-1f, 1f)
     }
     return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
 }

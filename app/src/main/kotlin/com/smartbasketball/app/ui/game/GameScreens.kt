@@ -13,6 +13,7 @@ import androidx.compose.foundation.text.selection.LocalTextSelectionColors
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.smartbasketball.app.ui.components.ScoreExplosionAnimation
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -402,25 +403,31 @@ fun SixDigitInputBox(
 }
 
 private fun isFaceInCircle(face: Face, bitmapWidth: Int, bitmapHeight: Int, screenWidth: Int, screenHeight: Int): Boolean {
-    val faceCenterX = face.boundingBox.centerX().toFloat()
-    val faceCenterY = face.boundingBox.centerY().toFloat()
+    val boundingBox = face.boundingBox
     
+    // 人脸中心
+    val faceCenterX = boundingBox.centerX().toFloat()
+    val faceCenterY = boundingBox.centerY().toFloat()
+    
+    // 缩放到屏幕坐标
     val scaleX = screenWidth.toFloat() / bitmapWidth
     val scaleY = screenHeight.toFloat() / bitmapHeight
-    
     val scaledFaceCenterX = faceCenterX * scaleX
     val scaledFaceCenterY = faceCenterY * scaleY
+    val scaledFaceWidth = boundingBox.width() * scaleX
     
+    // 圆参数
     val circleCenterX = screenWidth / 2f
     val circleCenterY = screenHeight / 2f
     val circleRadius = screenHeight * 0.375f
     
+    // 计算人脸中心到圆心的距离
     val distance = sqrt((scaledFaceCenterX - circleCenterX).pow(2) + (scaledFaceCenterY - circleCenterY).pow(2))
     
-    AppLogger.d("isFaceInCircle: faceCenter=($faceCenterX, $faceCenterY), bitmap=($bitmapWidth, $bitmapHeight), screen=($screenWidth, $screenHeight)")
-    AppLogger.d("isFaceInCircle: scaledFaceCenter=($scaledFaceCenterX, $scaledFaceCenterY), circleCenter=($circleCenterX, $circleCenterY), radius=$circleRadius, distance=$distance")
+    AppLogger.d("isFaceInCircle: faceCenter=($faceCenterX, $faceCenterY), scaledFaceCenter=($scaledFaceCenterX, $scaledFaceCenterY), circleCenter=($circleCenterX, $circleCenterY), radius=$circleRadius, distance=$distance, faceWidth=$scaledFaceWidth")
     
-    return distance <= circleRadius * 0.9f
+    // 可靠判断：人脸中心在圆内，且人脸宽度的一半也在圆内
+    return distance + scaledFaceWidth / 2 <= circleRadius
 }
 
 @Composable
@@ -542,27 +549,36 @@ fun MainScreen(
         return sizeScore * 0.3f + centerScore * 0.3f + confidenceScore * 0.4f
     }
     
-    // 检查人脸是否在抓拍圈内（简化判断）
+    // 检查人脸是否在抓拍圈内（可靠判断：大部分人脸在圆内）
     fun isFaceInCircle(face: Face, bitmapWidth: Int, bitmapHeight: Int, screenWidth: Int, screenHeight: Int): Boolean {
         val boundingBox = face.boundingBox
+        
+        // 人脸中心
         val faceCenterX = (boundingBox.left + boundingBox.right) / 2f
         val faceCenterY = (boundingBox.top + boundingBox.bottom) / 2f
         
+        // 缩放到屏幕坐标
         val scaleX = screenWidth.toFloat() / bitmapWidth
         val scaleY = screenHeight.toFloat() / bitmapHeight
         val scaledFaceCenterX = faceCenterX * scaleX
         val scaledFaceCenterY = faceCenterY * scaleY
+        val scaledFaceWidth = boundingBox.width() * scaleX
         
+        // 圆参数
         val circleCenterX = screenWidth / 2f
         val circleCenterY = screenHeight / 2f
-        val radius = screenHeight / 2.67f
+        val circleRadius = screenHeight * 0.375f
         
+        // 计算人脸中心到圆心的距离
         val distance = kotlin.math.sqrt(
             (scaledFaceCenterX - circleCenterX) * (scaledFaceCenterX - circleCenterX) +
             (scaledFaceCenterY - circleCenterY) * (scaledFaceCenterY - circleCenterY)
         )
         
-        return distance <= radius
+        // 可靠判断：人脸中心在圆内，且人脸宽度的一半也在圆内
+        // 即：distance + faceWidth/2 <= circleRadius
+        // 这保证了至少50%的人脸在圆内
+        return distance + scaledFaceWidth / 2 <= circleRadius
     }
     
     // 采集最佳帧
@@ -702,8 +718,16 @@ fun MainScreen(
                 AppLogger.d("MainScreen: 采集第${frameCandidates.size}帧，质量=$qualityScore")
             }
             
-            // 检查是否完成采集
+            // 检查是否完成采集（先检查人脸是否在识别区内）
             if (captureStartTime > 0 && elapsed >= MIN_CAPTURE_TIME_MS && bestFrame == null) {
+                // 再次检查人脸是否在识别区内，防止采集过程中人脸移出
+                if (!isFaceInCircle(face, bitmapWidth, bitmapHeight, screenSize.first, screenSize.second)) {
+                    AppLogger.d("MainScreen: 采集过程中人脸移出识别区，取消采集")
+                    captureStartTime = 0L
+                    frameCandidates = emptyList()
+                    bestFrame = null
+                    return@handleFaceDetectedLabel
+                }
                 captureBestFrame()
             }
             
@@ -1208,64 +1232,46 @@ fun GamePlayScreen(
         }
 
         if (countdownNumber != null && countdownNumber <= 0 && remainingTime == null && madeBalls > 0) {
-            GameEndPopup(madeBalls = madeBalls)
+            GameEndOverlay(madeBalls = madeBalls)
         }
     }
 }
 
 @Composable
-fun GameEndPopup(madeBalls: Int) {
-    Dialog(
-        onDismissRequest = { },
-        properties = androidx.compose.ui.window.DialogProperties(
-            dismissOnBackPress = false,
-            dismissOnClickOutside = false
-        )
+fun GameEndOverlay(
+    madeBalls: Int,
+    enableExplosion: Boolean = true
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black.copy(alpha = 0.7f)),
+        contentAlignment = Alignment.Center
     ) {
-        Card(
-            modifier = Modifier
-                .fillMaxWidth(0.8f)
-                .wrapContentHeight(),
-            shape = RoundedCornerShape(24.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = Color(0xFF2A2A2A)
-            )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(
-                modifier = Modifier.padding(32.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "游戏结束",
-                    fontSize = 36.sp,
-                    color = Color.White,
-                    fontWeight = FontWeight.Bold
-                )
+            ScoreExplosionAnimation(
+                score = madeBalls,
+                enabled = enableExplosion
+            )
 
-                Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(24.dp))
 
-                Text(
-                    text = "$madeBalls",
-                    fontSize = 120.sp,
-                    color = BasketballOrange,
-                    fontWeight = FontWeight.Bold
-                )
+            Text(
+                text = "进球",
+                fontSize = 32.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Medium
+            )
 
-                Text(
-                    text = "进球",
-                    fontSize = 32.sp,
-                    color = Color.White,
-                    fontWeight = FontWeight.Medium
-                )
+            Spacer(modifier = Modifier.height(48.dp))
 
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Text(
-                    text = "5秒后自动返回",
-                    fontSize = 18.sp,
-                    color = Color.White.copy(alpha = 0.6f)
-                )
-            }
+            Text(
+                text = "5秒后自动返回",
+                fontSize = 18.sp,
+                color = Color.White.copy(alpha = 0.6f)
+            )
         }
     }
 }
