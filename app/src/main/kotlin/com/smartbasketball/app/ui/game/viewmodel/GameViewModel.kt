@@ -22,6 +22,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.json.JSONObject
+import kotlin.random.Random
 import javax.inject.Inject
 
 @HiltViewModel
@@ -150,11 +151,112 @@ class GameViewModel @Inject constructor(
         _uiState.update {
             it.copy(
                 gameState = GameState.GAME_PLAYING,
-                countdownNumber = null,
+                countdownNumber = 3,
                 madeBalls = 0,
                 missedBalls = 0
             )
         }
+        startCountdown()
+    }
+    
+    private fun startCountdown() {
+        viewModelScope.launch {
+            for (i in 3 downTo 1) {
+                delay(1000)
+                val currentCountdown = _uiState.value.countdownNumber
+                if (currentCountdown != null && currentCountdown > 0) {
+                    _uiState.update { it.copy(countdownNumber = currentCountdown - 1) }
+                }
+            }
+            startGameTimer()
+        }
+    }
+    
+    private fun startGameTimer() {
+        _uiState.update { it.copy(remainingTime = 60) }
+        
+        viewModelScope.launch {
+            while (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
+                delay(1000)
+                val currentTime = _uiState.value.remainingTime
+                if (currentTime != null && currentTime > 0) {
+                    _uiState.update { it.copy(remainingTime = currentTime - 1) }
+                    
+                    if (currentTime <= 55 && currentTime % 3 == 0) {
+                        simulateShot()
+                    }
+                }
+            }
+            endGame()
+        }
+    }
+    
+    private fun simulateShot() {
+        val isMade = Random.nextFloat() < 0.6f
+        processShotResult(isMade)
+    }
+    
+    fun processShotResult(isMade: Boolean) {
+        _uiState.update {
+            it.copy(
+                madeBalls = if (isMade) it.madeBalls + 1 else it.madeBalls,
+                missedBalls = if (!isMade) it.missedBalls + 1 else it.missedBalls
+            )
+        }
+    }
+    
+    private fun endGame() {
+        val state = _uiState.value
+        
+        viewModelScope.launch {
+            uploadGameScore(state)
+        }
+        
+        _uiState.update { it.copy(remainingTime = null) }
+        
+        viewModelScope.launch {
+            delay(5000)
+            resetToStandby()
+        }
+    }
+    
+    private suspend fun uploadGameScore(state: GameUiState) {
+        try {
+            val data = JSONObject().apply {
+                put("school_id", schoolStorage.getSchoolId())
+                put("user_id", state.recognizedUserId)
+                put("made", state.madeBalls)
+                put("total", state.madeBalls + state.missedBalls)
+                put("accuracy", if (state.madeBalls + state.missedBalls > 0) 
+                    state.madeBalls * 100 / (state.madeBalls + state.missedBalls) else 0)
+            }
+            val result = basketballApi.uploadGameScore(data)
+            result.onSuccess {
+                AppLogger.d("GameViewModel: 成绩上报成功")
+            }.onFailure { e ->
+                AppLogger.e("GameViewModel: 成绩上报失败: ${e.message}")
+            }
+        } catch (e: Exception) {
+            AppLogger.e("GameViewModel: 成绩上报异常: ${e.message}")
+        }
+    }
+    
+    private fun resetToStandby() {
+        _uiState.update {
+            it.copy(
+                gameState = GameState.STANDBY,
+                countdownNumber = null,
+                remainingTime = null,
+                madeBalls = 0,
+                missedBalls = 0,
+                isRecognitionSuccess = false,
+                recognizedUserName = null,
+                recognizedUserRole = null,
+                recognizedUserTitle = null,
+                recognizedUserId = null
+            )
+        }
+        AppLogger.d("GameViewModel: 已返回待机状态，重新开启人脸识别")
     }
     
     private suspend fun recognizeFace(bitmap: Bitmap) {

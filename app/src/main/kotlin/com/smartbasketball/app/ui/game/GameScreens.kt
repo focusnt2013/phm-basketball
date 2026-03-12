@@ -33,6 +33,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import coil.compose.AsyncImage
 import com.google.mlkit.vision.face.Face
 import com.google.mlkit.vision.face.FaceLandmark
@@ -1202,6 +1203,67 @@ fun GamePlayScreen(
                     fontSize = 32.sp,
                     color = Color.White,
                     fontWeight = FontWeight.Medium
+                )
+            }
+        }
+
+        if (countdownNumber != null && countdownNumber <= 0 && remainingTime == null && madeBalls > 0) {
+            GameEndPopup(madeBalls = madeBalls)
+        }
+    }
+}
+
+@Composable
+fun GameEndPopup(madeBalls: Int) {
+    Dialog(
+        onDismissRequest = { },
+        properties = androidx.compose.ui.window.DialogProperties(
+            dismissOnBackPress = false,
+            dismissOnClickOutside = false
+        )
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .wrapContentHeight(),
+            shape = RoundedCornerShape(24.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Color(0xFF2A2A2A)
+            )
+        ) {
+            Column(
+                modifier = Modifier.padding(32.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "游戏结束",
+                    fontSize = 36.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
+                )
+
+                Spacer(modifier = Modifier.height(32.dp))
+
+                Text(
+                    text = "$madeBalls",
+                    fontSize = 120.sp,
+                    color = BasketballOrange,
+                    fontWeight = FontWeight.Bold
+                )
+
+                Text(
+                    text = "进球",
+                    fontSize = 32.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Medium
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Text(
+                    text = "5秒后自动返回",
+                    fontSize = 18.sp,
+                    color = Color.White.copy(alpha = 0.6f)
                 )
             }
         }
