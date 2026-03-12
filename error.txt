@@ -1,0 +1,315 @@
+2026-02-27 18:43:52.550  5709-5724  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1440 bytes, containing 1 windows, 15 views
+2026-02-27 18:49:12.638  5709-5724  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1440 bytes, containing 1 windows, 15 views
+2026-02-27 18:54:32.727  5709-5724  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1440 bytes, containing 1 windows, 15 views
+2026-02-27 18:59:52.827  5709-5724  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1440 bytes, containing 1 windows, 15 views
+2026-02-27 19:05:12.925  5709-5724  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1440 bytes, containing 1 windows, 15 views
+2026-02-27 19:09:56.483  5709-5726  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 19:09:56.502  5709-5726  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3a1870, tid 5726
+2026-02-27 19:09:56.528  5709-5726  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 19:10:15.999  6405-6405  ActivityThread          com.smartbasketball.app              W  Application com.smartbasketball.app is waiting for the debugger on port 8100...
+2026-02-27 19:10:16.005  6405-6405  System.out              com.smartbasketball.app              I  Sending WAIT chunk
+2026-02-27 19:10:16.208  6405-6405  System.out              com.smartbasketball.app              I  Debugger has connected
+2026-02-27 19:10:16.208  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:16.409  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:16.611  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:16.811  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:17.013  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:17.214  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:17.416  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:17.616  6405-6405  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 19:10:17.818  6405-6405  System.out              com.smartbasketball.app              I  debugger has settled (1473)
+2026-02-27 19:10:18.164  6405-6405  NetworkSecurityConfig   com.smartbasketball.app              D  No Network Security Config specified, using platform default
+2026-02-27 19:10:18.167  6405-6405  NetworkSecurityConfig   com.smartbasketball.app              D  No Network Security Config specified, using platform default
+2026-02-27 19:10:18.275  6405-6491  libEGL                  com.smartbasketball.app              D  loaded /vendor/lib/egl/libEGL_emulation.so
+2026-02-27 19:10:18.277  6405-6491  libEGL                  com.smartbasketball.app              D  loaded /vendor/lib/egl/libGLESv1_CM_emulation.so
+2026-02-27 19:10:18.279  6405-6491  libEGL                  com.smartbasketball.app              D  loaded /vendor/lib/egl/libGLESv2_emulation.so
+2026-02-27 19:10:18.573  6405-6405  tbasketball.ap          com.smartbasketball.app              W  Class androidx.compose.runtime.snapshots.SnapshotStateMap failed lock verification and will run slower.
+                                                                                                    Common causes for lock verification issues are non-optimized dex code
+                                                                                                    and incorrect proguard optimizations.
+2026-02-27 19:10:19.003  6405-6405  Compose Focus           com.smartbasketball.app              D  Owner FocusChanged(true)
+2026-02-27 19:10:19.127  6405-6490  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 19:10:19.142  6405-6490  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3adff0, tid 6490
+2026-02-27 19:10:19.176  6405-6490  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 19:10:19.180  6405-6490  OpenGLRenderer          com.smartbasketball.app              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+2026-02-27 19:10:19.181  6405-6490  OpenGLRenderer          com.smartbasketball.app              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
+2026-02-27 19:10:19.197  6405-6490  EGL_emulation           com.smartbasketball.app              D  eglCreateContext: 0xec3aeca0: maj 3 min 1 rcv 4
+2026-02-27 19:10:19.219  6405-6490  EGL_emulation           com.smartbasketball.app              D  eglMakeCurrent: 0xec3aeca0: ver 3 1 (tinfo 0xec180040) (first time)
+2026-02-27 19:10:19.227  6405-6490  Gralloc4                com.smartbasketball.app              I  mapper 4.x is not supported
+2026-02-27 19:10:19.229  6405-6490  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 19:10:19.229  6405-6490  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3af720, tid 6490
+2026-02-27 19:10:19.229  6405-6490  goldfish-address-space  com.smartbasketball.app              D  allocate: Ask for block of size 0x100
+2026-02-27 19:10:19.230  6405-6490  goldfish-address-space  com.smartbasketball.app              D  allocate: ioctl allocate returned offset 0x3f7ffe000 size 0x2000
+2026-02-27 19:10:19.232  6405-6490  Gralloc4                com.smartbasketball.app              W  allocator 4.x is not supported
+2026-02-27 19:10:19.283  6405-6490  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 19:10:19.285  6405-6499  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 19:10:19.286  6405-6499  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3ae290, tid 6499
+2026-02-27 19:10:19.318  6405-6499  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 19:10:19.318  6405-6499  OpenGLRenderer          com.smartbasketball.app              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+2026-02-27 19:10:19.318  6405-6499  OpenGLRenderer          com.smartbasketball.app              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
+2026-02-27 19:10:19.344  6405-6499  EGL_emulation           com.smartbasketball.app              D  eglCreateContext: 0xec3ae920: maj 3 min 1 rcv 4
+2026-02-27 19:10:19.373  6405-6499  EGL_emulation           com.smartbasketball.app              D  eglMakeCurrent: 0xec3ae920: ver 3 1 (tinfo 0xec180080) (first time)
+2026-02-27 19:10:19.375  6405-6495  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 19:10:19.376  6405-6495  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3aed10, tid 6495
+2026-02-27 19:10:19.391  6405-6423  OpenGLRenderer          com.smartbasketball.app              I  Davey! duration=1109ms; Flags=1, FrameTimelineVsyncId=12493, IntendedVsync=6444595420468, Vsync=6444712087130, InputEventId=0, HandleInputStart=6444721482405, AnimationStart=6444721493053, PerformTraversalsStart=6444721673445, DrawStart=6445609315603, FrameDeadline=6444612087134, FrameInterval=6444721385318, FrameStartTime=16666666, SyncQueued=6445627017699, SyncStart=6445634293014, IssueDrawCommandsStart=6445634885691, SwapBuffers=6445699730447, FrameCompleted=6445712591181, DequeueBufferDuration=4807, QueueBufferDuration=759001, GpuCompleted=6445712591181, SwapBuffersCompleted=6445704047254, DisplayPresentTime=0, 
+2026-02-27 19:10:19.401  6405-6495  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 19:10:19.454  6405-6405  Choreographer           com.smartbasketball.app              I  Skipped 58 frames!  The application may be doing too much work on its main thread.
+2026-02-27 19:10:20.549  6405-6490  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=12.74ms min=2.69ms max=153.45ms count=60
+2026-02-27 19:10:20.786  6405-6405  SmartBasketball         com.smartbasketball.app              D  ========== 开始同步人脸数据 ==========
+2026-02-27 19:10:20.786  6405-6405  SmartBasketball         com.smartbasketball.app              D  schoolId: 670891e8822d4675bcd3065b, timestamp: 0, role: 员工
+2026-02-27 19:10:20.895  6405-6495  SmartBasketball         com.smartbasketball.app              D  ========== 生成请求URL ==========
+2026-02-27 19:10:20.895  6405-6495  SmartBasketball         com.smartbasketball.app              D  接口URL: https://api.xixiti.com/basketball/synchfaces/1.8/1772190620874/20260227111020/99146607a1eaa7697b38e65d3adf21ba4661f683701556c7c6a9b8cefa8a44fbce5aed6a456a8d535d866b1d28494d578f813c609345c123f66c8f6dca9f3c41
+2026-02-27 19:10:20.895  6405-6495  SmartBasketball         com.smartbasketball.app              D  ========== 同步人脸接口 ==========
+2026-02-27 19:10:20.896  6405-6495  SmartBasketball         com.smartbasketball.app              D  schoolId: 670891e8822d4675bcd3065b, timestamp: 0, role: 员工
+2026-02-27 19:10:20.897  6405-6495  SmartBasketball         com.smartbasketball.app              D  ========== 发送POST请求 ==========
+2026-02-27 19:10:20.898  6405-6495  SmartBasketball         com.smartbasketball.app              D  请求URL: https://api.xixiti.com/basketball/synchfaces/1.8/1772190620874/20260227111020/99146607a1eaa7697b38e65d3adf21ba4661f683701556c7c6a9b8cefa8a44fbce5aed6a456a8d535d866b1d28494d578f813c609345c123f66c8f6dca9f3c41
+2026-02-27 19:10:20.898  6405-6495  SmartBasketball         com.smartbasketball.app              D  请求Body: {"school_id":"670891e8822d4675bcd3065b","timestamp":0,"role":"员工"}
+2026-02-27 19:10:21.255  6405-6495  SmartBasketball         com.smartbasketball.app              D  同步人脸返回: {"errcode":0,"data":[{"face":"https:\/\/xmdfs.xixiti.com\/group1\/M00\/00\/E8\/Cm5aEmi4Fg6APLPvAAtSRgJxV3E506.png","role":"员工","face_ts":1756894753846,"name":"刘老师","_id":"67048662822d46652ac08f2f","title":"观察员"},{"face":"https:\/\/phmdfs.focusnt.com\/group1\/M00\/02\/D4\/rBnDrWdhOtmAYpfWAAU-xPp4kmk657.png","role":"员工","face_ts":1734425303539,"name":"康老师","_id":"6704d5e4822d46652ac0911e","title":"管理员"},{"face":"https:\/\/phmdfs.focusnt.com\/group1\/M00\/03\/8E\/rBnDrWfGv2-AFMrFAAQLVqDDuvg685.png","role":"员工","face_ts":1741078382569,"name":"许老师","_id":"67c6ba35822d4652313ad787","title":"项目经理"}],"errmsg":"成功获取3个员工登记信息"}
+2026-02-27 19:10:21.257  6405-6495  SmartBasketball         com.smartbasketball.app              D  解析到 3 个用户
+2026-02-27 19:10:21.262  6405-6405  SmartBasketball         com.smartbasketball.app              D  同步人脸返回: errcode=0, errmsg=成功获取3个员工登记信息, 用户数=3
+2026-02-27 19:10:21.262  6405-6405  SmartBasketball         com.smartbasketball.app              D  同步员工人脸成功, 用户数: 3
+2026-02-27 19:10:21.320  6405-6405  SmartBasketball         com.smartbasketball.app              D  已保存 3 个用户到数据库
+2026-02-27 19:10:21.561  6405-6490  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=9.04ms min=1.16ms max=136.15ms count=48
+2026-02-27 19:10:22.401  6405-6529  DynamiteModule          com.smartbasketball.app              I  Considering local module com.google.mlkit.dynamite.face:10000 and remote module com.google.mlkit.dynamite.face:0
+2026-02-27 19:10:22.402  6405-6529  DynamiteModule          com.smartbasketball.app              I  Selected local version of com.google.mlkit.dynamite.face
+2026-02-27 19:10:22.517  6405-6525  TransportR...EventStore com.smartbasketball.app              D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2026-02-27 19:10:22.563  6405-6490  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=4.16ms min=1.73ms max=10.99ms count=60
+2026-02-27 19:10:22.585  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.582756    6529 face_detector_v2_jni.cc:33] Loading models_bundled/fssd_medium_8bit_v5.tflite
+2026-02-27 19:10:22.594  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.594584    6529 face_detector_v2_jni.cc:33] Loading models_bundled/fssd_medium_8bit_gray_v5.tflite
+2026-02-27 19:10:22.599  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.599860    6529 face_detector_v2_jni.cc:33] Loading models_bundled/fssd_anchors_v5.pb
+2026-02-27 19:10:22.600  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.600547    6529 face_detector_v2_jni.cc:33] Loading models_bundled/LMprec_600.emd
+2026-02-27 19:10:22.600  6405-6525  TransportR...oScheduler com.smartbasketball.app              D  Scheduling upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) with jobId=-683727233 in 86400000ms(Backend next call timestamp 0). Attempt 1
+2026-02-27 19:10:22.633  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.633834    6529 face_detector_v2_jni.cc:33] Loading models_bundled/BCLlefteyeclosed_200.emd
+2026-02-27 19:10:22.634  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.634182    6529 face_detector_v2_jni.cc:33] Loading models_bundled/BCLrighteyeclosed_200.emd
+2026-02-27 19:10:22.634  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.634754    6529 face_detector_v2_jni.cc:33] Loading models_bundled/BCLjoy_200.emd
+2026-02-27 19:10:22.635  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.635299    6529 face_detector_v2_jni.cc:33] Loading models_bundled/MFT_fssd_accgray.pb
+2026-02-27 19:10:22.635  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.635676    6529 face_detector_v2_jni.cc:33] Loading models_bundled/contours.tfl
+2026-02-27 19:10:22.643  6405-6525  TransportR...EventStore com.smartbasketball.app              D  Storing event with priority=DEFAULT, name=FIREBASE_ML_SDK for destination cct
+2026-02-27 19:10:22.661  6405-6529  native                  com.smartbasketball.app              I  I0227 11:10:22.661431    6529 face_detector_v2_jni.cc:33] Loading models_bundled/blazeface.tfl
+2026-02-27 19:10:22.663  6405-6525  TransportR...oScheduler com.smartbasketball.app              D  Scheduling upload for context TransportContext(cct, DEFAULT, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) with jobId=-688707970 in 30000ms(Backend next call timestamp 0). Attempt 1
+2026-02-27 19:10:22.674  6405-6525  TransportR...EventStore com.smartbasketball.app              D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2026-02-27 19:10:22.687  6405-6525  TransportR...oScheduler com.smartbasketball.app              D  Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+2026-02-27 19:10:22.691  6405-6529  tflite                  com.smartbasketball.app              I  Initialized TensorFlow Lite runtime.
+2026-02-27 19:10:23.578  6405-6490  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=3.45ms min=2.17ms max=6.42ms count=61
+2026-02-27 19:10:24.003  6405-6530  ProfileInstaller        com.smartbasketball.app              D  Installing profile for com.smartbasketball.app
+2026-02-27 19:10:24.058  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 2
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 3
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 4
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 5
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 6
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 10
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 45
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 43
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 44
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 200
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 220
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 221
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 222
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 223
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 224
+2026-02-27 19:10:24.059  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 225
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 226
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 227
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 300
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 302
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 312
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 314
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 315
+2026-02-27 19:10:24.060  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 316
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 2
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 3
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 4
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 5
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 6
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 10
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 45
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 43
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 44
+2026-02-27 19:10:24.061  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 200
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 220
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 221
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 222
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 223
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 224
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 225
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 226
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 227
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 300
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 302
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 312
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 314
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 315
+2026-02-27 19:10:24.062  6405-6529  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 316
+2026-02-27 19:10:24.093  6405-6525  TransportR...EventStore com.smartbasketball.app              D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2026-02-27 19:10:24.116  6405-6525  TransportR...oScheduler com.smartbasketball.app              D  Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+2026-02-27 19:10:24.125  6405-6525  TransportR...EventStore com.smartbasketball.app              D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2026-02-27 19:10:24.138  6405-6525  TransportR...oScheduler com.smartbasketball.app              D  Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+2026-02-27 19:10:24.176  6405-6405  SmartBasketball         com.smartbasketball.app              D  人脸特征生成成功: 刘老师
+2026-02-27 19:10:24.595  6405-6490  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=4.88ms min=1.17ms max=71.20ms count=58
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 2
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 3
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 4
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 5
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 6
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 10
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 45
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 43
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 44
+2026-02-27 19:10:25.148  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 200
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 220
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 221
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 222
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 223
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 224
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 225
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 226
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 227
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 300
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 302
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 312
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 314
+2026-02-27 19:10:25.149  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 315
+2026-02-27 19:10:25.150  6405-6536  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 316
+2026-02-27 19:10:25.221  6405-6405  SmartBasketball         com.smartbasketball.app              D  人脸特征生成成功: 康老师
+2026-02-27 19:10:25.612  6405-6490  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=4.56ms min=1.00ms max=67.68ms count=58
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 2
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 3
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 4
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 5
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 6
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 10
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 45
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 43
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 44
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 200
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 220
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 221
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 222
+2026-02-27 19:10:25.775  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 223
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 224
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 225
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 226
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 227
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 300
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 302
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 312
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 314
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 315
+2026-02-27 19:10:25.776  6405-6537  ThickFaceDetector       com.smartbasketball.app              D  Unknown landmark type: 316
+2026-02-27 19:10:25.865  6405-6405  SmartBasketball         com.smartbasketball.app              D  人脸特征生成成功: 许老师
+2026-02-27 19:10:25.865  6405-6405  SmartBasketball         com.smartbasketball.app              D  ========== 人脸特征生成完成，进入主界面 ==========
+2026-02-27 19:10:25.907  6405-6405  tbasketball.ap          com.smartbasketball.app              W  Class androidx.compose.runtime.snapshots.SnapshotStateList failed lock verification and will run slower.
+2026-02-27 19:10:33.065  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:10:33.071  6405-6490  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=402.45ms min=1.15ms max=6947.90ms count=18
+2026-02-27 19:15:53.181  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:21:02.058  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:26:09.496  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:31:29.607  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:36:49.700  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:42:09.800  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:47:29.928  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:52:50.360  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 19:58:10.815  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:03:31.258  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:08:50.774  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:14:10.972  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:19:31.400  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:24:51.826  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:30:11.959  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:35:32.055  6405-6422  AssistStructure         com.smartbasketball.app              I  Flattened final assist data: 1432 bytes, containing 1 windows, 15 views
+2026-02-27 20:39:58.698  6405-6428  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 20:39:58.743  6405-6428  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3ad2d0, tid 6428
+2026-02-27 20:39:58.748  6405-6428  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 20:40:16.268  7418-7418  Compatibil...geReporter com.smartbasketball.app              D  Compat change id reported: 171979766; UID 10080; state: ENABLED
+2026-02-27 20:40:16.314  7418-7418  ActivityThread          com.smartbasketball.app              W  Application com.smartbasketball.app is waiting for the debugger on port 8100...
+2026-02-27 20:40:16.315  7418-7418  System.out              com.smartbasketball.app              I  Sending WAIT chunk
+2026-02-27 20:40:16.524  7418-7418  System.out              com.smartbasketball.app              I  Debugger has connected
+2026-02-27 20:40:16.525  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:16.729  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:16.930  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:17.132  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:17.334  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:17.535  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:17.736  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:17.937  7418-7418  System.out              com.smartbasketball.app              I  waiting for debugger to settle...
+2026-02-27 20:40:18.139  7418-7418  System.out              com.smartbasketball.app              I  debugger has settled (1413)
+2026-02-27 20:40:18.549  7418-7418  NetworkSecurityConfig   com.smartbasketball.app              D  No Network Security Config specified, using platform default
+2026-02-27 20:40:18.553  7418-7418  NetworkSecurityConfig   com.smartbasketball.app              D  No Network Security Config specified, using platform default
+2026-02-27 20:40:18.746  7418-7487  libEGL                  com.smartbasketball.app              D  loaded /vendor/lib/egl/libEGL_emulation.so
+2026-02-27 20:40:18.751  7418-7487  libEGL                  com.smartbasketball.app              D  loaded /vendor/lib/egl/libGLESv1_CM_emulation.so
+2026-02-27 20:40:18.754  7418-7487  libEGL                  com.smartbasketball.app              D  loaded /vendor/lib/egl/libGLESv2_emulation.so
+2026-02-27 20:40:19.148  7418-7418  tbasketball.ap          com.smartbasketball.app              W  Class androidx.compose.runtime.snapshots.SnapshotStateMap failed lock verification and will run slower.
+                                                                                                    Common causes for lock verification issues are non-optimized dex code
+                                                                                                    and incorrect proguard optimizations.
+2026-02-27 20:40:19.769  7418-7418  Compose Focus           com.smartbasketball.app              D  Owner FocusChanged(true)
+2026-02-27 20:40:19.942  7418-7486  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 20:40:19.961  7418-7486  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3adff0, tid 7486
+2026-02-27 20:40:20.007  7418-7486  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 20:40:20.024  7418-7486  OpenGLRenderer          com.smartbasketball.app              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+2026-02-27 20:40:20.024  7418-7486  OpenGLRenderer          com.smartbasketball.app              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
+2026-02-27 20:40:20.038  7418-7486  EGL_emulation           com.smartbasketball.app              D  eglCreateContext: 0xec3ae1b0: maj 3 min 1 rcv 4
+2026-02-27 20:40:20.067  7418-7486  EGL_emulation           com.smartbasketball.app              D  eglMakeCurrent: 0xec3ae1b0: ver 3 1 (tinfo 0xe98eb040) (first time)
+2026-02-27 20:40:20.091  7418-7486  Gralloc4                com.smartbasketball.app              I  mapper 4.x is not supported
+2026-02-27 20:40:20.095  7418-7486  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 20:40:20.095  7418-7486  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3aed10, tid 7486
+2026-02-27 20:40:20.096  7418-7486  goldfish-address-space  com.smartbasketball.app              D  allocate: Ask for block of size 0x100
+2026-02-27 20:40:20.097  7418-7486  goldfish-address-space  com.smartbasketball.app              D  allocate: ioctl allocate returned offset 0x3f7ffe000 size 0x2000
+2026-02-27 20:40:20.102  7418-7486  Gralloc4                com.smartbasketball.app              W  allocator 4.x is not supported
+2026-02-27 20:40:20.154  7418-7486  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 20:40:20.155  7418-7494  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 20:40:20.161  7418-7494  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3ae5a0, tid 7494
+2026-02-27 20:40:20.191  7418-7494  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 20:40:20.193  7418-7494  OpenGLRenderer          com.smartbasketball.app              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+2026-02-27 20:40:20.194  7418-7494  OpenGLRenderer          com.smartbasketball.app              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
+2026-02-27 20:40:20.231  7418-7494  EGL_emulation           com.smartbasketball.app              D  eglCreateContext: 0xec3af1e0: maj 3 min 1 rcv 4
+2026-02-27 20:40:20.290  7418-7494  EGL_emulation           com.smartbasketball.app              D  eglMakeCurrent: 0xec3af1e0: ver 3 1 (tinfo 0xe98eb080) (first time)
+2026-02-27 20:40:20.293  7418-7491  HostConnection          com.smartbasketball.app              D  createUnique: call
+2026-02-27 20:40:20.293  7418-7491  HostConnection          com.smartbasketball.app              D  HostConnection::get() New Host Connection established 0xec3aedf0, tid 7491
+2026-02-27 20:40:20.324  7418-7491  HostConnection          com.smartbasketball.app              D  HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+2026-02-27 20:40:20.345  7418-7446  OpenGLRenderer          com.smartbasketball.app              I  Davey! duration=1585ms; Flags=1, FrameTimelineVsyncId=14074, IntendedVsync=11845028537784, Vsync=11845228537776, InputEventId=0, HandleInputStart=11845243849287, AnimationStart=11845243860871, PerformTraversalsStart=11845244061496, DrawStart=11846489479237, FrameDeadline=11845045204450, FrameInterval=11845243723583, FrameStartTime=16666666, SyncQueued=11846527996694, SyncStart=11846576840327, IssueDrawCommandsStart=11846577976159, SwapBuffers=11846634732709, FrameCompleted=11846663273577, DequeueBufferDuration=3915, QueueBufferDuration=1408636, GpuCompleted=11846663273577, SwapBuffersCompleted=11846659432543, DisplayPresentTime=0, 
+2026-02-27 20:40:20.370  7418-7418  Choreographer           com.smartbasketball.app              I  Skipped 80 frames!  The application may be doing too much work on its main thread.
+2026-02-27 20:40:21.463  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=16.21ms min=3.16ms max=119.00ms count=52
+2026-02-27 20:40:21.498  7418-7418  SmartBasketball         com.smartbasketball.app              D  ========== 开始同步人脸数据 ==========
+2026-02-27 20:40:21.498  7418-7418  SmartBasketball         com.smartbasketball.app              D  schoolId: 670891e8822d4675bcd3065b, timestamp: 1772190621320, role: 员工
+2026-02-27 20:40:21.633  7418-7491  SmartBasketball         com.smartbasketball.app              D  ========== 生成请求URL ==========
+2026-02-27 20:40:21.633  7418-7491  SmartBasketball         com.smartbasketball.app              D  接口URL: https://api.xixiti.com/basketball/synchfaces/1.8/1772196021600/20260227124021/40c292c1bbbad031dc3df4259f9801d0959a58d7642b1dcca59a80034466b79db367924593c318a081d6a1475a9a89b6ff5e136f758df820a5c1b6f59c7ac2a9
+2026-02-27 20:40:21.633  7418-7491  SmartBasketball         com.smartbasketball.app              D  ========== 同步人脸接口 ==========
+2026-02-27 20:40:21.633  7418-7491  SmartBasketball         com.smartbasketball.app              D  schoolId: 670891e8822d4675bcd3065b, timestamp: 1772190621320, role: 员工
+2026-02-27 20:40:21.634  7418-7491  SmartBasketball         com.smartbasketball.app              D  ========== 发送POST请求 ==========
+2026-02-27 20:40:21.634  7418-7491  SmartBasketball         com.smartbasketball.app              D  请求URL: https://api.xixiti.com/basketball/synchfaces/1.8/1772196021600/20260227124021/40c292c1bbbad031dc3df4259f9801d0959a58d7642b1dcca59a80034466b79db367924593c318a081d6a1475a9a89b6ff5e136f758df820a5c1b6f59c7ac2a9
+2026-02-27 20:40:21.635  7418-7491  SmartBasketball         com.smartbasketball.app              D  请求Body: {"school_id":"670891e8822d4675bcd3065b","timestamp":1772190621320,"role":"员工"}
+2026-02-27 20:40:21.917  7418-7491  SmartBasketball         com.smartbasketball.app              D  同步人脸返回: {"errcode":0,"data":[],"errmsg":"成功获取0个员工登记信息"}
+2026-02-27 20:40:21.917  7418-7491  SmartBasketball         com.smartbasketball.app              D  解析到 0 个用户
+2026-02-27 20:40:21.919  7418-7418  SmartBasketball         com.smartbasketball.app              D  同步人脸返回: errcode=0, errmsg=成功获取0个员工登记信息, 用户数=0
+2026-02-27 20:40:21.919  7418-7418  SmartBasketball         com.smartbasketball.app              D  没有需要同步的员工
+2026-02-27 20:40:21.920  7418-7418  SmartBasketball         com.smartbasketball.app              D  ========== 开始同步人脸数据 ==========
+2026-02-27 20:40:21.920  7418-7418  SmartBasketball         com.smartbasketball.app              D  schoolId: 670891e8822d4675bcd3065b, timestamp: 1772190621320, role: 学生
+2026-02-27 20:40:21.959  7418-7491  SmartBasketball         com.smartbasketball.app              D  ========== 生成请求URL ==========
+2026-02-27 20:40:21.959  7418-7491  SmartBasketball         com.smartbasketball.app              D  接口URL: https://api.xixiti.com/basketball/synchfaces/1.8/1772196021942/20260227124021/a0239c5a903bdf6926d92181af82e4e4842b8bd727618c5d6a7b676b8a2d92d14037d43bfc0a5ae32d922837d706cdbc5e428a011458a02f33e57f7a0ec9351e
+2026-02-27 20:40:21.960  7418-7491  SmartBasketball         com.smartbasketball.app              D  ========== 同步人脸接口 ==========
+2026-02-27 20:40:21.960  7418-7491  SmartBasketball         com.smartbasketball.app              D  schoolId: 670891e8822d4675bcd3065b, timestamp: 1772190621320, role: 学生
+2026-02-27 20:40:21.962  7418-7491  SmartBasketball         com.smartbasketball.app              D  ========== 发送POST请求 ==========
+2026-02-27 20:40:21.962  7418-7491  SmartBasketball         com.smartbasketball.app              D  请求URL: https://api.xixiti.com/basketball/synchfaces/1.8/1772196021942/20260227124021/a0239c5a903bdf6926d92181af82e4e4842b8bd727618c5d6a7b676b8a2d92d14037d43bfc0a5ae32d922837d706cdbc5e428a011458a02f33e57f7a0ec9351e
+2026-02-27 20:40:21.962  7418-7491  SmartBasketball         com.smartbasketball.app              D  请求Body: {"school_id":"670891e8822d4675bcd3065b","timestamp":1772190621320,"role":"学生"}
+2026-02-27 20:40:22.271  7418-7491  SmartBasketball         com.smartbasketball.app              D  同步人脸返回: {"errcode":0,"data":[],"errmsg":"成功获取0个学生登记信息"}
+2026-02-27 20:40:22.272  7418-7491  SmartBasketball         com.smartbasketball.app              D  解析到 0 个用户
+2026-02-27 20:40:22.278  7418-7418  SmartBasketball         com.smartbasketball.app              D  同步人脸返回: errcode=0, errmsg=成功获取0个学生登记信息, 用户数=0
+2026-02-27 20:40:22.278  7418-7418  SmartBasketball         com.smartbasketball.app              D  没有需要同步的学生
+2026-02-27 20:40:22.480  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=9.14ms min=1.86ms max=150.34ms count=52
+2026-02-27 20:40:23.497  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.33ms min=2.93ms max=8.56ms count=61
+2026-02-27 20:40:23.992  7418-7511  ProfileInstaller        com.smartbasketball.app              D  Installing profile for com.smartbasketball.app
+2026-02-27 20:40:24.498  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.49ms min=3.06ms max=11.48ms count=60
+2026-02-27 20:40:25.513  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.60ms min=1.86ms max=8.91ms count=61
+2026-02-27 20:40:26.527  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.55ms min=2.31ms max=9.73ms count=61
+2026-02-27 20:40:27.531  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.50ms min=1.09ms max=11.31ms count=60
+2026-02-27 20:40:28.546  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.49ms min=2.93ms max=10.32ms count=61
+2026-02-27 20:40:29.565  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.42ms min=1.90ms max=15.03ms count=61
+2026-02-27 20:40:30.582  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.66ms min=2.50ms max=16.68ms count=61
+2026-02-27 20:40:31.582  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=6.15ms min=1.96ms max=31.50ms count=58
+2026-02-27 20:40:32.593  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=4.73ms min=0.95ms max=8.77ms count=61
+2026-02-27 20:40:33.599  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.68ms min=2.74ms max=9.42ms count=60
+2026-02-27 20:40:34.617  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.64ms min=1.06ms max=23.78ms count=61
+2026-02-27 20:40:35.629  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.82ms min=1.03ms max=25.70ms count=60
+2026-02-27 20:40:36.647  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.87ms min=2.46ms max=23.50ms count=60
+2026-02-27 20:40:37.660  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=4.79ms min=2.76ms max=8.21ms count=61
+2026-02-27 20:40:38.664  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.81ms min=2.67ms max=9.70ms count=60
+2026-02-27 20:40:39.680  7418-7486  EGL_emulation           com.smartbasketball.app              D  app_time_stats: avg=5.31ms min=2.31ms max=9.32ms count=61

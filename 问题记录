@@ -1,0 +1,20 @@
+DJL（Deep Java Library）本身确实没有直接封装 InsightFace​ 的人脸检测功能。DJL 是一个通用的深度学习框架，主要用于加载和运行模型，它并不针对特定算法（如 InsightFace）提供开箱即用的封装。
+
+如果你想在 Java 中使用 InsightFace 模型（如 SCRFD），通常需要通过以下两种方式之一：
+
+1. 使用封装好的第三方工具包（推荐）
+
+由于直接调用 DJL 底层 API 编写预处理和后处理逻辑较为复杂（这也是你遇到坐标负数问题的根源），推荐使用基于 DJL 封装好的开源工具包，它们已经内置了人脸检测的逻辑。
+
+推荐工具：SmartJavaAI
+
+这是一个基于 DJL 封装的开源 Java AI 工具箱，内置了人脸检测能力，可以直接调用 InsightFace 模型（如 SCRFD）。
+
+GitHub/Gitee 地址：搜索 SmartJavaAI（项目作者：geekwenjie）。
+
+使用方法：
+// 引入依赖后，只需几行代码
+FaceAlgorithm algorithm = FaceAlgorithmFactory.createFaceAlgorithm();
+FaceDetectedResult result = algorithm.detect("your_image.jpg");
+
+它会自动处理模型加载、预处理、推理和后处理，无需你手动解析模型输出的原始坐标

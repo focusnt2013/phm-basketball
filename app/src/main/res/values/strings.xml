@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">智慧投篮机</string>
+    <string name="mode_countdown">倒计时模式</string>
+    <string name="mode_fixed_count">定数模式</string>
+    <string name="gesture_raise_hand">举起右手启动</string>
+    <string name="gesture_fist">握拳切换模式</string>
+    <string name="user_visitor">游客</string>
+    <string name="countdown_start">三、二、一，开始</string>
+    <string name="goal_made">进球！</string>
+    <string name="goal_missed">未中</string>
+    <string name="game_over">游戏结束</string>
+    <string name="welcome_visitor">欢迎游客</string>
+    <string name="please_register">请先注册账号查看排名</string>
+</resources>
