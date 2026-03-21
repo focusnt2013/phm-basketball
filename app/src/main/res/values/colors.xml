@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#FF6B35</color>
+    <color name="basketball_orange">#FF6B00</color>
+    <color name="sports_blue">#1E88E5</color>
+    <color name="dark_background">#1A1A1A</color>
+    <color name="light_text">#FFFFFF</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="error_red">#F44336</color>
+    <color name="warning_yellow">#FFC107</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="surface_dark">#2A2A2A</color>
+    <color name="card_background">#333333</color>
+</resources>

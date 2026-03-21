@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Disable certain checks that are not critical -->
+    <issue id="MissingTranslation" severity="warning" />
+    <issue id="IconMissingDensityFolder" severity="warning" />
+    <issue id="MissingApplicationIcon" severity="warning" />
+
+    <!-- Enable important security checks -->
+    <issue id="HardcodedDebugMode" severity="error" />
+    <issue id="AllowBackup" severity="warning" />
+    <issue id="SetJavaScriptEnabled" severity="warning" />
+
+    <!-- Performance checks -->
+    <issue id="ObsoleteLintCustomCheck" severity="warning" />
+    <issue id="UnusedResources" severity="warning" />
+    <issue id="UnusedIds" severity="informational" />
+
+    <!-- Correctness checks -->
+    <issue id="NewApi" severity="error" />
+    <issue id="InlinedApi" severity="warning" />
+    <issue id="Override" severity="error" />
+
+    <!-- Security checks -->
+    <issue id="TrustAllX509TrustManager" severity="error" />
+    <issue id="UseCheckPermission" severity="error" />
+
+    <!-- Usability checks -->
+    <issue id="ButtonStyle" severity="informational" />
+    <issue id="TextFields" severity="warning" />
+
+    <!-- Accessibility checks -->
+    <issue id="ContentDescription" severity="warning" />
+    <issue id="LabelFor" severity="warning" />
+
+    <!-- Internationalization -->
+    <issue id="SetTextI18n" severity="warning" />
+    <issue id="HardcodedText" severity="warning" />
+</lint>
