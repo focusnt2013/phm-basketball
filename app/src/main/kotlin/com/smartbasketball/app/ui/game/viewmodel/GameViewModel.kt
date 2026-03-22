@@ -11,6 +11,7 @@ import com.smartbasketball.app.domain.model.GameState
 import com.smartbasketball.app.domain.model.GameSession
 import com.smartbasketball.app.domain.model.UserRole
 import com.smartbasketball.app.domain.model.GameRecord
+import com.smartbasketball.app.gpio.ShootSensorManager
 import com.smartbasketball.app.util.AppLogger
 import com.smartbasketball.app.util.GestureType
 import com.google.mlkit.vision.face.Face
@@ -23,7 +24,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.json.JSONObject
-import kotlin.random.Random
 import javax.inject.Inject
 
 @HiltViewModel
@@ -35,7 +35,8 @@ class GameViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
     
-    private var gameJob: Job? = null  // 游戏协程job，用于取消
+    private var gameJob: Job? = null
+    private val shootSensorManager = ShootSensorManager()
 
     init {
         initializeApp()
@@ -180,40 +181,32 @@ class GameViewModel @Inject constructor(
     
     private fun startGameTimer() {
         _uiState.update { it.copy(remainingTime = 60) }
-        
+
+        AppLogger.d("startGameTimer: 初始化投篮感应器")
+        if (!shootSensorManager.initialize()) {
+            AppLogger.e("startGameTimer: 投篮感应器初始化失败")
+        }
+
+        shootSensorManager.startListening { isMade ->
+            AppLogger.d("startGameTimer: 检测到投篮 isMade=$isMade")
+            processShotResult(isMade)
+        }
+
         gameJob = viewModelScope.launch {
             AppLogger.d("startGameTimer: 开始游戏计时")
-            
-            // 启动单独协程处理投篮模拟（随机间隔800-1200毫秒）
-            launch {
-                while (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
-                    val delayMs = Random.nextLong(800, 1201)  // 800-1200毫秒随机
-                    delay(delayMs)
-                    
-                    if (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
-                        simulateShot()
-                    }
-                }
-            }
-            
-            // 主循环：每秒递减剩余时间
+
             while (_uiState.value.remainingTime != null && _uiState.value.remainingTime!! > 0) {
                 delay(1000)
                 val newTime = _uiState.value.remainingTime?.minus(1)
                 if (newTime != null && newTime >= 0) {
                     _uiState.update { it.copy(remainingTime = newTime) }
-                    
+
                     if (newTime <= 0) {
                         endGame()
                     }
                 }
             }
         }
-    }
-    
-    private fun simulateShot() {
-        val isMade = Random.nextFloat() < 0.6f
-        processShotResult(isMade)
     }
     
     fun processShotResult(isMade: Boolean) {
@@ -226,14 +219,17 @@ class GameViewModel @Inject constructor(
     }
     
     private fun endGame() {
+        AppLogger.d("endGame: 停止投篮感应器监听")
+        shootSensorManager.stopListening()
+
         val state = _uiState.value
-        
+
         viewModelScope.launch {
             uploadGameScore(state)
         }
-        
+
         _uiState.update { it.copy(remainingTime = null) }
-        
+
         viewModelScope.launch {
             delay(5000)
             resetToStandby()
@@ -262,10 +258,10 @@ class GameViewModel @Inject constructor(
     }
     
     private fun resetToStandby() {
-        // 取消游戏协程
         gameJob?.cancel()
         gameJob = null
-        
+        shootSensorManager.stopListening()
+
         _uiState.update {
             it.copy(
                 gameState = GameState.STANDBY,
@@ -281,6 +277,12 @@ class GameViewModel @Inject constructor(
             )
         }
         AppLogger.d("GameViewModel: 已返回待机状态，重新开启人脸识别")
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        shootSensorManager.release()
+        AppLogger.d("GameViewModel: onCleared - 释放投篮感应器资源")
     }
     
     private suspend fun recognizeFace(bitmap: Bitmap) {

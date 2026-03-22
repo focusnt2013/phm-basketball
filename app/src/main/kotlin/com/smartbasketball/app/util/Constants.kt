@@ -40,6 +40,14 @@ object Constants {
         const val SERIAL_READ_INTERVAL_MS = 10L
     }
 
+    // GPIO Settings
+    object GPIO {
+        const val SHOOT_SENSOR_PIN = 81  // 投篮感应器GPIO号
+        const val POLLING_INTERVAL_MS = 20L
+        const val DEBOUNCE_MS = 300L
+        const val SECOND_TRIGGER_WINDOW_MS = 500L
+    }
+
     // Camera Settings
     object Camera {
         const val PREVIEW_WIDTH = 640
