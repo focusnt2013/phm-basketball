@@ -114,7 +114,14 @@ class GpioJniWrapper {
         private const val TAG = "GpioJniWrapper"
 
         init {
-            System.loadLibrary("smartbasketballgpio")
+            try {
+                System.loadLibrary("smartbasketballgpio")
+                AppLogger.d("GpioJniWrapper: SO库加载成功")
+            } catch (e: UnsatisfiedLinkError) {
+                AppLogger.e("GpioJniWrapper: SO库加载失败: ${e.message}")
+            } catch (e: Exception) {
+                AppLogger.e("GpioJniWrapper: SO库加载异常: ${e.message}")
+            }
         }
 
         @JvmStatic

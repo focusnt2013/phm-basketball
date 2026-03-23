@@ -175,6 +175,7 @@ int gpio_write_value(int gpio_num, int value) {
     return GPIO_SUCCESS;
 }
 
+extern "C" {
 JNIEXPORT jint JNICALL
 Java_com_smartbasketball_app_gpio_GpioJniWrapper_nativeExportGPIO(
         JNIEnv* env,
@@ -220,3 +221,5 @@ Java_com_smartbasketball_app_gpio_GpioJniWrapper_nativeWriteGpioValue(
         jint value) {
     return (jint)gpio_write_value((int)gpio_num, (int)value);
 }
+}
+

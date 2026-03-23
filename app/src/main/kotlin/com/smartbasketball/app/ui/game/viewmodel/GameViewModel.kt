@@ -241,10 +241,12 @@ class GameViewModel @Inject constructor(
             val data = JSONObject().apply {
                 put("school_id", schoolStorage.getSchoolId())
                 put("user_id", state.recognizedUserId)
-                put("made", state.madeBalls)
-                put("total", state.madeBalls + state.missedBalls)
-                put("accuracy", if (state.madeBalls + state.missedBalls > 0) 
-                    state.madeBalls * 100 / (state.madeBalls + state.missedBalls) else 0)
+                put("user_name", state.recognizedUserName)
+                put("user_title", state.recognizedUserTitle)
+                put("role", state.recognizedUserRole)
+                put("examn", state.madeBalls)
+                put("shoot", state.madeBalls + state.missedBalls)
+                put("period", 60)
             }
             val result = basketballApi.uploadGameScore(data)
             result.onSuccess {

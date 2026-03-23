@@ -120,3 +120,7 @@
 # Obfuscation
 -repackageclasses ''
 -allowaccessmodification
+
+# Fix R8 missing classes
+-dontwarn javax.lang.model.**
+-keep class javax.lang.model.** { *; }
